@@ -15,7 +15,7 @@ __________
 I've added a bootstrap css grid generator. It will generate a custom bootstrap grid stylesheet. If no name is specified it will override the original bootstrap grid styles!
 default grid: 60+20*12=960 grid
 
-example: <link href="bootstrap-grid.php?name=namespace-&col=12&cw=60&gw=20" rel="stylesheet" type="text/css">
+example: &lt;link href=&quot;bootstrap-grid.php?name=namespace-&amp;col=12&amp;cw=60&amp;gw=20&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 
 
 Responsive
