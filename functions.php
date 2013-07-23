@@ -574,10 +574,12 @@ if( !function_exists("theme_styles") ) {
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
+        wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/bootstrap-grid.php?name='.of_get_option('bootstrap-grid_name').'&col='.of_get_option('bootstrap-grid_col').'&cw='.of_get_option('bootstrap-grid_cw').'&gw='.of_get_option('bootstrap-grid_gw'), array(), '1.1', 'all' );
         wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
         wp_register_style( 'wp-bootstrap', get_stylesheet_uri(), array(), '1.0', 'all' );
         
         wp_enqueue_style( 'bootstrap' );
+        wp_enqueue_style( 'bootstrap-grid');
         wp_enqueue_style( 'bootstrap-responsive' );
         wp_enqueue_style( 'wp-bootstrap');
     }
