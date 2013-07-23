@@ -10,6 +10,14 @@ We’ve built the WP-Bootstrap theme so that it could be used as-is or as a star
 
 Star this project on Github to keep up with its progress.
 
+CUSTOM BOOTSTRAP GRID GENERATOR
+__________
+I've added a bootstrap css grid generator. It will generate a custom bootstrap grid stylesheet. If no name is specified it will override the original bootstrap grid styles!
+default grid: 60+20*12=960 grid
+
+example: <link href="bootstrap-grid.php?name=namespace-&col=12&cw=60&gw=20" rel="stylesheet" type="text/css">
+
+
 Responsive
 __________
 
