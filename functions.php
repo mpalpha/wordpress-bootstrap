@@ -579,8 +579,8 @@ if( !function_exists("theme_styles") ) {
         wp_register_style( 'wp-bootstrap', get_stylesheet_uri(), array(), '1.0', 'all' );
         
         wp_enqueue_style( 'bootstrap' );
-        wp_enqueue_style( 'bootstrap-grid');
         wp_enqueue_style( 'bootstrap-responsive' );
+        wp_enqueue_style( 'bootstrap-grid');
         wp_enqueue_style( 'wp-bootstrap');
     }
 }
