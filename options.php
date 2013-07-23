@@ -256,6 +256,37 @@ function optionsframework_options() {
 						"id" => "wpbs_css",
 						"std" => "",
 						"type" => "textarea");
+						
+	$options[] = array( "name" => "Custom Bootstrap Grid",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Namespace",
+						"desc" => "Define a custom css namespace. <small>(<em>optional: leave this empty to override the default grid styles.</em>)</small>",
+						"id" => "bootstrap-grid_name",
+						"class" => "mini",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Columns",
+						"desc" => "Number of columns.",
+						"id" => "bootstrap-grid_col",
+						"class" => "mini",
+						"std" => "12",
+						"type" => "text");
+
+	$options[] = array( "name" => "Column Width",
+						"desc" => "Column width. numbers only! ",
+						"id" => "bootstrap-grid_cw",
+						"class" => "mini",
+						"std" => "60",
+						"type" => "text");
+
+	$options[] = array( "name" => "Gutter width",
+						"desc" => "Gutter width. numbers only! ",
+						"id" => "bootstrap-grid_gw",
+						"class" => "mini",
+						"std" => "20",
+						"type" => "text");
 															
 	return $options;
 }
