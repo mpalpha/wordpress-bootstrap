@@ -1,6 +1,6 @@
 <?php 
 /**********************************************************
-title: custom bootstrap grid css generator.
+title: bootstrap css grid generator.
 
 description: this script will generate a custom bootstrap grid stylesheet. If no name is specified it will override the original bootstrap grid styles!
 default grid: 60+20*12=960 grid
@@ -34,11 +34,8 @@ echo $fluidGridGutterWidth .PHP_EOL;
 */
 // generate rows
 $str = <<<NORMAL
-.container-fluid {
-	max-width:{$gridRowWidth}px !important;
-    padding-left: {$gridGutterWidth}px !important;
-    padding-right: {$gridGutterWidth}px !important;
-}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
 [class*="{$gridName}span"].hide,
 .row-fluid [class*="{$gridName}span"].hide {
   display: none; }
@@ -66,13 +63,13 @@ $str = <<<NORMAL
 .{$gridName}navbar-static-top .{$gridName}container,
 .{$gridName}navbar-fixed-top .{$gridName}container,
 .{$gridName}navbar-fixed-bottom .{$gridName}container {
-  width: 580px; }
+  width: {$gridRowWidth}px; }
 NORMAL;
 // new line
 $str.=PHP_EOL;
 // generate spans
 for ($i = 0; $i < $gridColumns; $i++) {
-  $val++;
+	$val++;
 	$gwidth = ($val==1)?0:$gridGutterWidth;
 	$cwidth+= ($gridColumnWidth+$gwidth);
 	$str.= '.'.$gridName.'span'.($val) .' {width: '. $cwidth .'px;}'.PHP_EOL;
@@ -135,6 +132,7 @@ $str.= <<<EOD
 .{$gridName}row, .{$gridName}row-fluid {
   margin-left: 0;
   overflow: hidden; }
+}
 EOD;
 // output stylesheet
 echo $str;

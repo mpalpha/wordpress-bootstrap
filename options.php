@@ -257,7 +257,7 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "textarea");
 						
-	$options[] = array( "name" => "Custom Bootstrap Grid",
+	$options[] = array( "name" => "Default Grid",
 						"type" => "heading");
 
 	$options[] = array( "name" => "Namespace",
@@ -268,22 +268,146 @@ function optionsframework_options() {
 						"type" => "text");
 
 	$options[] = array( "name" => "Columns",
-						"desc" => "Number of columns.",
+						"desc" => "Number of columns. <small>(<em>default: 12, changing this will require extensive theme modification.</em>)</small>",
 						"id" => "bootstrap-grid_col",
 						"class" => "mini",
 						"std" => "12",
 						"type" => "text");
 
 	$options[] = array( "name" => "Column Width",
-						"desc" => "Column width. numbers only! ",
+						"desc" => "Column width. numbers only! <small>(<em>default: 60</em>)</small>",
 						"id" => "bootstrap-grid_cw",
 						"class" => "mini",
 						"std" => "60",
 						"type" => "text");
 
 	$options[] = array( "name" => "Gutter width",
-						"desc" => "Gutter width. numbers only! ",
+						"desc" => "Gutter width. numbers only! <small>(<em>default: 20</em>)</small>",
 						"id" => "bootstrap-grid_gw",
+						"class" => "mini",
+						"std" => "20",
+						"type" => "text");
+						
+	$options[] = array( "name" => "Phone and Tablet Grid",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Namespace",
+						"desc" => "Define a custom css namespace. <small>(<em>optional: leave this empty to override the default grid styles.</em>)</small>",
+						"id" => "bootstrap-phone-tablet-grid_name",
+						"class" => "mini",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Columns",
+						"desc" => "Number of columns. <small>(<em>default: 12, changing this will require extensive theme modification.</em>)</small>",
+						"id" => "bootstrap-phone-tablet-grid_col",
+						"class" => "mini",
+						"std" => "12",
+						"type" => "text");
+
+	$options[] = array( "name" => "Column Width",
+						"desc" => "Column width. numbers only! <small>(<em>default: 42</em>)</small>",
+						"id" => "bootstrap-phone-tablet-grid_cw",
+						"class" => "mini",
+						"std" => "42",
+						"type" => "text");
+
+	$options[] = array( "name" => "Gutter width",
+						"desc" => "Gutter width. numbers only! <small>(<em>default: 20</em>)</small>",
+						"id" => "bootstrap-phone-tablet-grid_gw",
+						"class" => "mini",
+						"std" => "20",
+						"type" => "text");
+						
+	$options[] = array( "name" => "Portrait Tablet Grid",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Namespace",
+						"desc" => "Define a custom css namespace. <small>(<em>optional: leave this empty to override the default grid styles.</em>)</small>",
+						"id" => "bootstrap-portrait-tablet-grid_name",
+						"class" => "mini",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Columns",
+						"desc" => "Number of columns. <small>(<em>default: 12, changing this will require extensive theme modification.</em>)</small>",
+						"id" => "bootstrap-portrait-tablet-grid_col",
+						"class" => "mini",
+						"std" => "12",
+						"type" => "text");
+
+	$options[] = array( "name" => "Column Width",
+						"desc" => "Column width. numbers only! <small>(<em>default: 42</em>)</small>",
+						"id" => "bootstrap-portrait-tablet-grid_cw",
+						"class" => "mini",
+						"std" => "42",
+						"type" => "text");
+
+	$options[] = array( "name" => "Gutter width",
+						"desc" => "Gutter width. numbers only! <small>(<em>default: 20</em>)</small>",
+						"id" => "bootstrap-portrait-tablet-grid_gw",
+						"class" => "mini",
+						"std" => "20",
+						"type" => "text");
+						
+	$options[] = array( "name" => "Large Grid",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Namespace",
+						"desc" => "Define a custom css namespace. <small>(<em>optional: leave this empty to override the default grid styles.</em>)</small>",
+						"id" => "bootstrap-large-grid_name",
+						"class" => "mini",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Columns",
+						"desc" => "Number of columns. <small>(<em>default: 12, changing this will require extensive theme modification.</em>)</small>",
+						"id" => "bootstrap-large-grid_col",
+						"class" => "mini",
+						"std" => "12",
+						"type" => "text");
+
+	$options[] = array( "name" => "Column Width",
+						"desc" => "Column width. numbers only! <small>(<em>default: 70</em>)</small>",
+						"id" => "bootstrap-large-grid_cw",
+						"class" => "mini",
+						"std" => "70",
+						"type" => "text");
+
+	$options[] = array( "name" => "Gutter width",
+						"desc" => "Gutter width. numbers only! <small>(<em>default: 30</em>)</small>",
+						"id" => "bootstrap-large-grid_gw",
+						"class" => "mini",
+						"std" => "30",
+						"type" => "text");
+						
+	$options[] = array( "name" => "Phone Grid",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Namespace",
+						"desc" => "Define a custom css namespace. <small>(<em>optional: leave this empty to override the default grid styles.</em>)</small>",
+						"id" => "bootstrap-phone-grid_name",
+						"class" => "mini",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Columns",
+						"desc" => "Number of columns. <small>(<em>default: 12, changing this will require extensive theme modification.</em>)</small>",
+						"id" => "bootstrap-phone-grid_col",
+						"class" => "mini",
+						"std" => "12",
+						"type" => "text");
+
+	$options[] = array( "name" => "Column Width",
+						"desc" => "Column width. numbers only! <small>(<em>default: 42</em>)</small>",
+						"id" => "bootstrap-phone-grid_cw",
+						"class" => "mini",
+						"std" => "42",
+						"type" => "text");
+
+	$options[] = array( "name" => "Gutter width",
+						"desc" => "Gutter width. numbers only! <small>(<em>default: 20</em>)</small>",
+						"id" => "bootstrap-phone-grid_gw",
 						"class" => "mini",
 						"std" => "20",
 						"type" => "text");

@@ -573,14 +573,22 @@ function add_active_class($classes, $item) {
 if( !function_exists("theme_styles") ) {  
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
-        wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/bootstrap-grid.php?name='.of_get_option('bootstrap-grid_name').'&col='.of_get_option('bootstrap-grid_col').'&cw='.of_get_option('bootstrap-grid_cw').'&gw='.of_get_option('bootstrap-grid_gw'), array(), '1.1', 'all' );
-        wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
-        wp_register_style( 'wp-bootstrap', get_stylesheet_uri(), array(), '1.0', 'all' );
+        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1', 'all' );
+		wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
+        wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/bootstrap-grid.php?name='.of_get_option('bootstrap-grid_name').'&col='.of_get_option('bootstrap-grid_col').'&cw='.of_get_option('bootstrap-grid_cw').'&gw='.of_get_option('bootstrap-grid_gw'), array(), '1.1', 'all' );        
+        wp_register_style( 'bootstrap-large-grid', get_template_directory_uri() . '/bootstrap-large-grid.php?name='.of_get_option('bootstrap-large-grid_name').'&col='.of_get_option('bootstrap-large-grid_col').'&cw='.of_get_option('bootstrap-large-grid_cw').'&gw='.of_get_option('bootstrap-large-grid_gw'), array('bootstrap-grid'), '1.1', 'all' );
+        wp_register_style( 'bootstrap-portrait-tablet-grid', get_template_directory_uri() . '/bootstrap-portrait-tablet-grid.php?name='.of_get_option('bootstrap-portrait-tablet-grid_name').'&col='.of_get_option('bootstrap-portrait-tablet-grid_col').'&cw='.of_get_option('bootstrap-portrait-tablet-grid_cw').'&gw='.of_get_option('bootstrap-portrait-tablet-grid_gw'), array('bootstrap-large-grid'), '1.1', 'all' );
+        wp_register_style( 'bootstrap-phone-tablet-grid', get_template_directory_uri() . '/bootstrap-phone-tablet-grid.php?name='.of_get_option('bootstrap-phone-tablet-grid_name').'&col='.of_get_option('bootstrap-phone-tablet-grid_col').'&cw='.of_get_option('bootstrap-phone-tablet-grid_cw').'&gw='.of_get_option('bootstrap-phone-tablet-grid_gw'), array('bootstrap-portrait-tablet-grid'), '1.1', 'all' );
+        wp_register_style( 'bootstrap-phone-grid', get_template_directory_uri() . '/bootstrap-phone-grid.php?name='.of_get_option('bootstrap-phone-grid_name').'&col='.of_get_option('bootstrap-phone-grid_col').'&cw='.of_get_option('bootstrap-phone-grid_cw').'&gw='.of_get_option('bootstrap-phone-grid_gw'), array('bootstrap-phone-tablet-grid'), '1.1', 'all' );		
+        wp_register_style( 'wp-bootstrap', get_stylesheet_uri(), array(), '1.1', 'all' );
         
         wp_enqueue_style( 'bootstrap' );
         wp_enqueue_style( 'bootstrap-responsive' );
         wp_enqueue_style( 'bootstrap-grid');
+		wp_enqueue_style( 'bootstrap-phone-tablet-grid');
+		wp_enqueue_style( 'bootstrap-portrait-tablet-grid');
+		wp_enqueue_style( 'bootstrap-large-grid');
+		wp_enqueue_style( 'bootstrap-phone-grid');	
         wp_enqueue_style( 'wp-bootstrap');
     }
 }
