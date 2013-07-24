@@ -1,4 +1,4 @@
-WP-BOOTSTRAP
+WP-BOOTSTRAP-CUSTOM-GRID
 ===================
 
 Bootstrap (http://twitter.github.io/bootstrap) in Wordpress theme form. Using Eddie Machado's Bones for a starting point (https://github.com/eddiemachado/bones). 
@@ -12,7 +12,7 @@ Star this project on Github to keep up with its progress.
 
 CUSTOM BOOTSTRAP GRID GENERATOR
 __________
-I've added a bootstrap css grid generator. It will generate a custom bootstrap grid stylesheet. If no name is specified it will override the original bootstrap grid styles!
+I've added a bootstrap css grid generator. It will generate a custom bootstrap grid stylesheet to override the static responsive stylesheet from bootsrtap. If no name is specified it will override the original bootstrap grid styles!
 default grid: 60+20*12=960 grid
 
 example: &lt;link href=&quot;bootstrap-grid.php?name=namespace-&amp;col=12&amp;cw=60&amp;gw=20&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
