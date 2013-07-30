@@ -132,8 +132,29 @@ $str.= <<<EOD
 .{$gridName}row, .{$gridName}row-fluid {
   margin-left: 0;
   overflow: hidden; }
-}
 EOD;
+// set min width for sidebar
+$containerFluidWidth = 480 - ($gridGutterWidth * 2);
+$gridRowMaxWidth = 480 - ($gridGutterWidth * 2);
+$str.= <<<EOD2
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+	padding:0px {$gridGutterWidth}px !important;
+  }
+  .container-fluid.nav-container {
+	padding-left:0 !important;
+	padding-right:0 !important;
+  }
+  .navbar .brand {
+	margin: 0;
+    /*padding-left: {$gridGutterWidth}px;
+    padding-right: {$gridGutterWidth}px;*/
+  }
+  .navbar .btn-navbar {
+	margin-left: {$gridGutterWidth}px;
+    margin-right: {$gridGutterWidth}px;
+  }
+}
+EOD2;
 // output stylesheet
 echo $str;
 } else {
