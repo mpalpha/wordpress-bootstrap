@@ -141,6 +141,10 @@ $str.= <<<EOD2
 	padding-left:{$gridGutterWidth}px !important;
 	padding-right:{$gridGutterWidth}px !important;
   }
+  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+	margin-left:-{$gridGutterWidth}px !important;
+	margin-right:-{$gridGutterWidth}px !important;
+  }
   .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
 	padding:0px {$gridGutterWidth}px !important;
   }
@@ -148,8 +152,18 @@ $str.= <<<EOD2
 	max-width:{$containerFluidWidth}px !important;
 	padding-left:0 !important;
 	padding-right:0 !important;
+	min-width:245px !important;
   }
 
+  .navbar .brand {
+    padding-left: 0 !important;
+    padding-right: {$gridGutterWidth}px;
+  }
+  .navbar .btn-navbar {
+	margin-left: {$gridGutterWidth}px;
+    margin-right: 0 !important;
+  }
+  
   #content.{$gridName}row-fluid > .sidebar {
 	width:100% !important;
   }
