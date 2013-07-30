@@ -134,6 +134,31 @@ $str.= <<<EOD
   overflow: hidden; }
 }
 EOD;
+// set min width for sidebar
+$containerFluidWidth = 480 - ($gridGutterWidth * 2);
+$gridRowMaxWidth = 480 - ($gridGutterWidth * 2);
+$str.= <<<EOD2
+  body {
+	padding-left:{$gridGutterWidth}px !important;
+	padding-right:{$gridGutterWidth}px !important;
+  }
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+	padding:0px {$gridGutterWidth}px !important;
+  }
+  .container-fluid {
+	max-width:{$containerFluidWidth}px !important;
+	padding-left:0 !important;
+	padding-right:0 !important;
+  }
+
+  #content.{$gridName}row-fluid > .sidebar {
+	width:100% !important;
+  }
+  #content.{$gridName}row-fluid > #main {
+	width:100% !important;
+  }
+
+EOD2;
 // output stylesheet
 echo $str;
 } else {
