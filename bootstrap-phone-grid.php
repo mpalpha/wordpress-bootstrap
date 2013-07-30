@@ -132,7 +132,6 @@ $str.= <<<EOD
 .{$gridName}row, .{$gridName}row-fluid {
   margin-left: 0;
   overflow: hidden; }
-}
 EOD;
 // set min width for sidebar
 $containerFluidWidth = 480 - ($gridGutterWidth * 2);
@@ -157,7 +156,7 @@ $str.= <<<EOD2
   #content.{$gridName}row-fluid > #main {
 	width:100% !important;
   }
-
+}
 EOD2;
 // output stylesheet
 echo $str;
