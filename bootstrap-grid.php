@@ -35,10 +35,9 @@ echo $fluidGridGutterWidth .PHP_EOL;
 // generate rows
 $str = <<<NORMAL
 .container-fluid {
-	max-width:{$gridRowWidth}px !important;
-    padding-left: {$gridGutterWidth}px !important;
-    padding-right: {$gridGutterWidth}px !important;
+	max-width:{$gridRowWidth}px;
 }
+
 [class*="{$gridName}span"].hide,
 .row-fluid [class*="{$gridName}span"].hide {
   display: none; }
@@ -135,6 +134,7 @@ $str.= <<<EOD
 .{$gridName}row, .{$gridName}row-fluid {
   margin-left: 0;
   overflow: hidden; }
+  
 EOD;
 // output stylesheet
 echo $str;
