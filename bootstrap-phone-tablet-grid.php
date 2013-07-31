@@ -141,8 +141,8 @@ $gridRowMaxWidth = $mediaWidthHigh - ($gridGutterWidth * 2);
 $str.= <<<EOD2
 
   body {
-    padding-left: {$gridGutterWidth}px;
-    padding-right: {$gridGutterWidth}px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .navbar-fixed-top,
   .navbar-fixed-bottom,
