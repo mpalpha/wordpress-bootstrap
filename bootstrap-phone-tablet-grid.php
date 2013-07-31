@@ -22,6 +22,8 @@ $gridRowWidth = ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridCo
 $fluidGridGutterWidth = ($gridGutterWidth/$gridRowWidth) * 100;
 $fluidGridColumnWidth = ($gridColumnWidth/$gridRowWidth) * 100;
 $fluidGridGutterOffset = $fluidGridGutterWidth-0.08621;
+$mediaWidthLow = 481;
+$mediaWidthHigh = 767;
 
 /* uncomment to debug 
 echo $gridName .PHP_EOL;
@@ -35,7 +37,7 @@ echo $fluidGridGutterWidth .PHP_EOL;
 // generate rows
 $str = <<<NORMAL
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
+@media (max-width: {$mediaWidthHigh}px) {
 [class*="{$gridName}span"].hide,
 .row-fluid [class*="{$gridName}span"].hide {
   display: none; }
@@ -134,25 +136,27 @@ $str.= <<<EOD
   overflow: hidden; }
 EOD;
 // set min width for sidebar
-$containerFluidWidth = 480 - ($gridGutterWidth * 2);
-$gridRowMaxWidth = 480 - ($gridGutterWidth * 2);
+$containerFluidWidth = $mediaWidthHigh - ($gridGutterWidth * 2);
+$gridRowMaxWidth = $mediaWidthHigh - ($gridGutterWidth * 2);
 $str.= <<<EOD2
-  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
-	padding:0px {$gridGutterWidth}px !important;
-  }
 
-  .container-fluid {
-	padding-left:0 !important;
-	padding-right:0 !important;
-  }
-  .navbar .brand {
-	margin: 0;
+  body {
     padding-left: {$gridGutterWidth}px;
     padding-right: {$gridGutterWidth}px;
   }
-  .navbar .btn-navbar {
-	margin-left: {$gridGutterWidth}px;
-    margin-right: {$gridGutterWidth}px;
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin-left: -{$gridGutterWidth}px;
+    margin-right: -{$gridGutterWidth}px;
+  }
+  .container-fluid.nav-container {
+	padding-left:0;
+	padding-right:0;
+  }
+  .navbar .brand {
+    padding-left: {$gridGutterWidth}px;
+    padding-right: {$gridGutterWidth}px;
   }
 }
 EOD2;
