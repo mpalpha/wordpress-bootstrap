@@ -22,6 +22,8 @@ $gridRowWidth = ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridCo
 $fluidGridGutterWidth = ($gridGutterWidth/$gridRowWidth) * 100;
 $fluidGridColumnWidth = ($gridColumnWidth/$gridRowWidth) * 100;
 $fluidGridGutterOffset = $fluidGridGutterWidth-0.08621;
+$mediaWidthLow = 245;
+$mediaWidthHigh = 480;
 
 /* uncomment to debug 
 echo $gridName .PHP_EOL;
@@ -35,7 +37,7 @@ echo $fluidGridGutterWidth .PHP_EOL;
 // generate rows
 $str = <<<NORMAL
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media (max-width: {$mediaWidthHigh}px) {
 [class*="{$gridName}span"].hide,
 .row-fluid [class*="{$gridName}span"].hide {
   display: none; }
@@ -134,41 +136,52 @@ $str.= <<<EOD
   overflow: hidden; }
 EOD;
 // set min width for sidebar
-$containerFluidWidth = 480 - ($gridGutterWidth * 2);
-$gridRowMaxWidth = 480 - ($gridGutterWidth * 2);
+$containerFluidWidth = $mediaWidthHigh - ($gridGutterWidth * 2);
+$gridRowMaxWidth = $mediaWidthHigh - ($gridGutterWidth * 2);
 $str.= <<<EOD2
-  body {
-	padding-left:{$gridGutterWidth}px !important;
-	padding-right:{$gridGutterWidth}px !important;
-  }
-  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
-	margin-left:-{$gridGutterWidth}px !important;
-	margin-right:-{$gridGutterWidth}px !important;
+body {
+	padding-left:{$gridGutterWidth}px ;
+	padding-right:{$gridGutterWidth}px ;
   }
   .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
-	padding:0px {$gridGutterWidth}px !important;
+	padding:0px {$gridGutterWidth}px ;
   }
   .container-fluid {
-	max-width:{$containerFluidWidth}px !important;
 	padding-left:0 !important;
 	padding-right:0 !important;
-	min-width:245px !important;
+	width:100% !important;
+	min-width:{$mediaWidthLow}px !important;
+	max-width:{$containerFluidWidth}px !important;
   }
-
   .navbar .brand {
-    padding-left: 0 !important;
+    padding-left: {$gridGutterWidth}px;
     padding-right: {$gridGutterWidth}px;
+    margin: 0 0 0 -{$gridGutterWidth}px;
   }
   .navbar .btn-navbar {
 	margin-left: {$gridGutterWidth}px;
     margin-right: 0 !important;
   }
-  
+    
+  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+	margin-left:-{$gridGutterWidth}px ;
+	margin-right:-{$gridGutterWidth}px ;
+  }
   #content.{$gridName}row-fluid > .sidebar {
-	width:100% !important;
+	width: 100% !important;
+	min-width:{$mediaWidthLow}px !important;
+	max-width:{$containerFluidWidth}px !important;
   }
   #content.{$gridName}row-fluid > #main {
-	width:100% !important;
+	width: 100% !important;
+	min-width:{$mediaWidthLow}px !important;
+	max-width:{$containerFluidWidth}px !important;
+}
+@media (max-width: {$mediaWidthHigh}px) {
+  .navbar .brand {
+    padding-left: {$gridGutterWidth}px !important;
+    padding-right: {$gridGutterWidth}px !important;
+    margin: 0 0 0 -{$gridGutterWidth}px !important;
   }
 }
 EOD2;
