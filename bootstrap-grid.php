@@ -36,6 +36,8 @@ echo $fluidGridGutterWidth .PHP_EOL;
 $str = <<<NORMAL
 .container-fluid {
 	max-width:{$gridRowWidth}px;
+	padding-left:{$gridGutterWidth}px !important;
+	padding-right:{$gridGutterWidth}px !important;
 }
 
 [class*="{$gridName}span"].hide,
