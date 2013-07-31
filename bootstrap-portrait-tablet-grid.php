@@ -152,12 +152,10 @@ $str.= <<<EOD2
 	padding-left:0px;
 	padding-right:0px;
   }
-}
-@media (min-width: {$mediaWidthLow}px) and (max-width: {$mediaWidthHigh}px) {
   .navbar .brand {
-    padding-left: {$gridGutterWidth}px !important;
-    padding-right: {$gridGutterWidth}px !important;
-    margin: 0 0 0 -{$gridGutterWidth}px !important;
+    padding-left:0px;
+    padding-right:0px;
+    margin: 0 0 0 -{$gridGutterWidth}px;
   }
 }
 EOD2;
