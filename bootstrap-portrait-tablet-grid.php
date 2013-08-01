@@ -157,6 +157,9 @@ $str.= <<<EOD2
     padding-right:0px;
     margin: 0 0 0 -{$gridGutterWidth}px;
   }
+  .navbar .btn-navbar {
+    margin-right:-{$gridGutterWidth}px;
+  }
 }
 EOD2;
 // output stylesheet
