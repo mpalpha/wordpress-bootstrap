@@ -137,6 +137,7 @@ $str.= <<<EOD
   margin-left: 0;
   overflow: hidden; }
   
+  header #inner-header {overflow:hidden;}
 EOD;
 // output stylesheet
 echo $str;
