@@ -158,6 +158,8 @@ $str.= <<<EOD2
     padding-left: {$gridGutterWidth}px;
     padding-right: {$gridGutterWidth}px;
   }
+  
+  header #inner-header {overflow:hidden;}
 }
 EOD2;
 // output stylesheet
