@@ -183,6 +183,7 @@ body {
     padding-right: {$gridGutterWidth}px !important;
     margin: 0 0 0 -{$gridGutterWidth}px !important;
   }
+  header #inner-header {overflow:visible;}
 }
 EOD2;
 // output stylesheet
